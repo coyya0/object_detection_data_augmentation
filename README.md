@@ -31,7 +31,7 @@ random : Bbox 내 상, 하, 좌, 우중 랜덤한 부분 가림.
 준비한 이미지를 png 파일로 변경해주세요. conver_jpg_to_png.py를 사용하면 변환이 가능합니다.  
 merge_multi를 사용하기 전 객체의 배경을 제거한 png이미지를 준비해주세요.  
 이미지와 라벨 txt를 한 폴더에 모아주세요.  
-해당 폴어데서 make_list_cur.py를 실행해주세요. -> 이미지와 라벨 파일 경로 텍스트화  
+해당 폴더에서 make_list_cur.py를 실행해주세요. -> 이미지와 라벨 파일 경로 텍스트화  
 
 FIX_ME 부분을 수정해주세요.  
 MIN_MERGE_OBJECTS = 2 : 합성될 객체의 최소 수  
