@@ -127,6 +127,8 @@ def rotate_image_and_label(img_path, label_path, output_img_path, output_label_p
 def adjust_brightness(img_path, label_path, output_img_path, output_label_path, angle, position):
     # 알파 채널을 포함하여 이미지를 로드
     img = cv2.imread(img_path, cv2.IMREAD_UNCHANGED)
+
+    # To edit factor
     factor = 1
     if factor is None:
         factor = random.uniform(0.5, 1.2)
@@ -386,6 +388,7 @@ if __name__ == "__main__":
     ensure_dir(os.path.join(output_dataset_path, 'images', 'train'))
     ensure_dir(os.path.join(output_dataset_path, 'labels', 'train'))
     print(original_dataset_path)
+    # To edit angle
     #angle = random.uniform(0, -20)
     angle = 0
     angle = -angle
