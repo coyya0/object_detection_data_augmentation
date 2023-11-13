@@ -48,7 +48,7 @@ from ultralytics.utils.plotting import Annotator, colors, save_one_box
 from models.common import DetectMultiBackend
 from utils.dataloaders import IMG_FORMATS, VID_FORMATS, LoadImages, LoadScreenshots, LoadStreams
 from utils.general import (LOGGER, Profile, check_file, check_img_size, check_imshow, check_requirements, colorstr, cv2,
-                           increment_path, non_max_suppression, print_args, scale_boxes, strip_optimizer, xyxy2xywh, plot_object_count, send_sms)
+                           increment_path, non_max_suppression, print_args, scale_boxes, strip_optimizer, xyxy2xywh, plot_object_count) # if you want sns_send, here edit sns_send 
 from utils.torch_utils import select_device, smart_inference_mode
 
 
@@ -184,7 +184,7 @@ def run(
 
                     # To edit : spacing between letters
                     position = position[0] , position[1] + 30
-                    
+                    """
                     # To edit : Commodity management messages
                     if n == 2 : 
                         if message_content == '':
@@ -194,7 +194,7 @@ def run(
 
                 if message_content!='':
                     send_sms(message_content)
-                    
+                """    
                 # Write results
                 for *xyxy, conf, cls in reversed(det):
                     c = int(cls)  # integer class
