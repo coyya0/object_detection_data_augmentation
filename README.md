@@ -13,7 +13,7 @@ augmentation_final_updated.py을 사용하면 아래 3가지의 데이터 증강
 
 EX : 
 python augmentation_final_updated.py --data input_path --output output_path --rotate --brigthness --cropout --position 'select_position'  
-rotate , brightness, cropout 중 실행하고 싶은 부분 --추가 
+rotate , brightness, cropout 중 실행하고 싶은 부분 --추가  
 cropout 부분에서 --position을 지정하고 싶으면 상, 하, 좌, 우 혹은 랜덤 중 선택해주세요.
 
 # Brightness
