@@ -9,7 +9,12 @@ augmentation_final_updated.py을 사용하면 아래 3가지의 데이터 증강
     parser.add_argument('--output', type=str, default='./output', help='output Path to the dataset')
     parser.add_argument('--display-original', action='store_true', help='Display the original image with bounding boxes')
     parser.add_argument('--position', type=str, default='', choices=['left', 'right', 'top', 'bottom', 'center','random'], help='Position of the cropout')
-    parser.add_argument('--box_width_percent', type=int, default=30, help='Width of the cropout box as a percentage of image width (default: 30)')
+    parser.add_argument('--box_width_percent', type=int, default=30, help='Width of the cropout box as a percentage of image width (default: 30)')  
+
+EX : 
+python augmentation_final_updated.py --data input_path --output output_path --rotate --brigthness --cropout --position 'select_position'  
+rotate , brightness, cropout 중 실행하고 싶은 부분 --추가 
+cropout 부분에서 --position을 지정하고 싶으면 상, 하, 좌, 우 혹은 랜덤 중 선택해주세요.
 
 # Brightness
 def adjust_brightness 부분에서 # To edit factor 부분의 factor를 수정해주세요.  
