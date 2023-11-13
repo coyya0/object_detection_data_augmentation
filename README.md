@@ -61,5 +61,17 @@ yolov5를 먼저 clone 해주세요.
 yolov5의 detect.py와 utils/general.py을 변경해주세요 
 detect.py 실행 시 왼쪽 상단에 클래스 명, 객체 수가 표시 됩니다. 
 
+sns_send 기능은 비활성화 되어있습니다 사용하고 싶다면 general.py의 마지막 부분인 sns_send를 활성화 해주세요 
+import general 부분에 sns_send를 추가해주세요.
+sns_send 부분의 """ """ 처리를 삭제해주세요 
+
+# general.py 
+plot_object_count 함수가 추가되었습니다.
+sms_send 함수가 추가되었습니다. 
+sms_send를 사용하고 싶다면 twilio 계정을 생성하고 account를 추가해주세요. 
+
+
+
+
  
  
