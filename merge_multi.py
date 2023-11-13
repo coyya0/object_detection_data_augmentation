@@ -8,12 +8,12 @@ import os
 ################################ FIX_ME ########################################
 ###                                                                          ###
 MIN_MERGE_OBJECTS = 2
-MAX_MERGE_OBJECTS = 3
+MAX_MERGE_OBJECTS = 4
 IMAGE_ITER_COUNT = 80
 IMAGE_HIEGHT = 1387
 IMAGE_WIDTH = 1040
-INPUT_DIR = os.path.join(os.getcwd(),"rembg_png_aug/images/") 
-OUTPUT_DIR = os.path.join(os.getcwd(),"merge_rembg_png_aug/") 
+INPUT_DIR = os.path.join(os.getcwd(),"split_data/train_original/rm_images/") 
+OUTPUT_DIR = os.path.join(os.getcwd(),"split_data/merge/") 
 ###                                                                          ###
 ################################################################################
 if not os.path.exists(INPUT_DIR):

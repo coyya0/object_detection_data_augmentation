@@ -65,7 +65,8 @@ def rotate_image_and_label(img_path, label_path, output_img_path, output_label_p
     if img.shape[2] == 4:
         alpha_channel = img[:, :, 3]
     else:
-        raise ValueError("Object image does not have an alpha channel")
+        raise ValueError(f"Object image does not have an alpha channel {img_path}")
+        
     h, w = img.shape[:2]
     center = (w // 2, h // 2)    
     rotated_img = rotate_image_with_alpha(img, angle)
@@ -311,6 +312,7 @@ def ensure_dir(directory):
     if not os.path.exists(directory):
         os.makedirs(directory)
 
+
 def display_image_with_original_and_rotated_bboxes(img_path, original_label_path, rotated_label_path, title, angle, position):
     img = cv2.imread(img_path)
     h, w = img.shape[:2]
@@ -359,8 +361,8 @@ if __name__ == "__main__":
     parser.add_argument('--rotate', action='store_true', help='Apply rotation augmentation')
     parser.add_argument('--brightness', action='store_true', help='Apply brightness adjustment')
     parser.add_argument('--cropout', action='store_true', help='Apply cropout augmentation')
-    parser.add_argument('--data', type=str, default='./datasets', help='input Path to the dataset')
-    parser.add_argument('--output', type=str, default='./datasets\output', help='output Path to the dataset')
+    parser.add_argument('--data', type=str, default='./', help='input Path to the dataset')
+    parser.add_argument('--output', type=str, default='./output', help='output Path to the dataset')
     parser.add_argument('--display-original', action='store_true', help='Display the original image with bounding boxes')
     parser.add_argument('--position', type=str, default='', choices=['left', 'right', 'top', 'bottom', 'center','random'], help='Position of the cropout')
     parser.add_argument('--box_width_percent', type=int, default=30, help='Width of the cropout box as a percentage of image width (default: 30)')
@@ -376,33 +378,34 @@ if __name__ == "__main__":
         functions.append(apply_cropout)
 
     position = args.position
+    
 
     original_dataset_path = args.data
     output_dataset_path = args.output
         # Ensure the necessary directories exist
     ensure_dir(os.path.join(output_dataset_path, 'images', 'train'))
     ensure_dir(os.path.join(output_dataset_path, 'labels', 'train'))
-    
-    #angle = random.uniform(0,-20)
-    angle = -90
+    print(original_dataset_path)
+    #angle = random.uniform(0, -20)
+    angle = 0
     angle = -angle
 
     apply_augmentation_on_dataset(functions, original_dataset_path, output_dataset_path, angle,position)
 
     # 폴더에서 무작위로 이미지 파일 하나를 선택
-    example_img_folder = os.path.join(os.getcwd(), output_dataset_path, 'images', 'train')
-    print(example_img_folder)
-    all_images = [img for img in os.listdir(example_img_folder) if img.endswith('.png')]
-    random_image_name = random.choice(all_images)
+    #example_img_folder = os.path.join(os.getcwd(), output_dataset_path, 'images', 'train')
+    #print(example_img_folder)
+    #all_images = [img for img in os.listdir(example_img_folder) if img.endswith('.png')]
+    #random_image_name = random.choice(all_images)
 
     # 선택한 이미지에 대한 라벨 파일 이름을 결정
-    random_label_name = os.path.splitext(random_image_name)[0] + '.txt'
+   # random_label_name = os.path.splitext(random_image_name)[0] + '.txt'
 
     # 무작위로 선택된 이미지와 라벨 파일의 경로 설정
-    random_img_path = os.path.join(example_img_folder, random_image_name)
-    random_label_path = os.path.join(output_dataset_path, 'labels', 'train', random_label_name)
-    random_original_label_path = os.path.join(original_dataset_path, 'labels', 'train', random_label_name)
-    display_image_with_bboxes(random_img_path,random_label_path,"title")
+    #random_img_path = os.path.join(example_img_folder, random_image_name)
+    #random_label_path = os.path.join(output_dataset_path, 'labels', 'train', random_label_name)
+    #random_original_label_path = os.path.join(original_dataset_path, 'labels', 'train', random_label_name)
+    #display_image_with_bboxes(random_img_path,random_label_path,"title")
     # 이미지 표시
     #display_image_with_original_and_rotated_bboxes(
     #    random_img_path, 
