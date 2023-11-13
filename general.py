@@ -1120,13 +1120,14 @@ def plot_object_count(img, label, position):
     thickness = 2
     cv2.putText(img, label, position, font, fontScale, color, thickness, cv2.LINE_AA)
 
+"""
 from twilio.rest import Client
 
 # Twilio account 
-account_sid = 'AC73526588625edf7ae4596c1ff6797a1f'
-auth_token = '9deaddcd90f57b55efe25938d949c349'
-from_phone_number = '+12512629154'
-to_phone_number = '+821049267423'
+account_sid = 'your account_sid number'
+auth_token = 'your auth_token number'
+from_phone_number = 'your frome phone number'
+to_phone_number = 'your phone number'
 
 # Twilio client 
 client = Client(account_sid, auth_token)
@@ -1138,7 +1139,7 @@ def send_sms(message):
         from_=from_phone_number,
         body=message,
     )
-
+"""
 
 
 
