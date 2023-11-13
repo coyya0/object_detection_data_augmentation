@@ -2,10 +2,10 @@ import os
 import cv2
 from tqdm import tqdm
 
-# Let's define the folder path where the uploaded image and label file are located
-folder_path = os.path.join(os.getcwd(),'split_data/merge')
-image_path = os.path.join(folder_path,'images/train')
-label_path = os.path.join(folder_path, 'labels/train')
+# To Edit path
+folder_path = os.path.join(os.getcwd(),'folder_path')
+image_path = os.path.join(folder_path,'images/train') # input image path
+label_path = os.path.join(folder_path, 'labels/train') # input label path
 
 def adjust_bbox(x, y, w, h, img_w, img_h):
     # Calculate the coordinates of the top left and bottom right corners
