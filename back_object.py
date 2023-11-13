@@ -33,14 +33,10 @@ def merge_images_with_alpha(object_img_path, background_img_path, output_img_pat
     # 결과 이미지 저장
     cv2.imwrite(output_img_path, bg_img)
 
-
-#object_img_folder = 'D:/bk/datasets/alpha_test'
-#background_img_folder = 'D:/bk/datasets/background/images'
-#output_folder = os.path.join(os.getcwd(),"alpha_merge_test")  # 현재 디렉토리
-
-object_img_folder = os.path.join(os.getcwd(),"split_data/merge")
-background_img_folder = os.path.join(os.getcwd(),"background/images")
-output_folder = os.path.join(os.getcwd(),"split_data/merge_output")
+# To Edit
+object_img_folder = os.path.join(os.getcwd(),"Object_img_path")
+background_img_folder = os.path.join(os.getcwd(),"background_path")
+output_folder = os.path.join(os.getcwd(),"output_path")
 object_images = [f for f in os.listdir(object_img_folder) if f.endswith('.png')]
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
