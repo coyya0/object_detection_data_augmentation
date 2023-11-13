@@ -44,10 +44,6 @@ def adjust_bbox(x, y, w, h, img_w, img_h):
     return x_new / img_w, y_new / img_h, w_new / img_w, h_new / img_h
 
 # Now, we will apply the bounding box adjustment to all .png and .txt file pairs in the folder_path
-
-
-# ...
-# ...
 for filename in tqdm(os.listdir(folder_path), desc='Processing files', unit='file'):
     if filename.endswith('.png'):
         img_path = os.path.join(folder_path, filename)
