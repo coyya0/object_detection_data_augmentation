@@ -1,3 +1,7 @@
+# Notion Link
+https://github.com/coyya0/object_detection_data_augmentation
+프로젝트 진행 링크입니다!
+
 # augmentation_final_updated.py
 augmentation_final_updated.py을 사용하면 아래 3가지의 데이터 증강을 실행할 수 있습니다! 
 아래의 parser를 확인해주세요 
